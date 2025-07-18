@@ -98,3 +98,40 @@ antibiotics_7806863881 = [
   ]
 
 
+
+culture_339537616 = {
+  "culture_description": "RESPIRATORY",
+  "age": 20,
+  "gender": "M",
+  "median_heartrate": 125.0,
+  "median_resprate": 33.0,
+  "median_temp": 98.4,
+  "median_sysbp": 124.0,
+  "median_diasbp": 80.0,
+  "median_wbc": 7.0,
+  "median_hgb": 12500.0,
+  "median_plt": 588.0,
+  "median_na": 137.0,
+  "median_hco3": 36.0,
+  "median_bun": 8.0,
+  "median_cr": 0.6,
+}
+
+antibiotics_339537616 = [
+    'Trimethoprim/Sulfamethoxazole', 
+    'Colistin', 
+    'Vancomycin',
+    'Tobramycin', 
+    'Linezolid', 
+    'Piperacillin', 
+    'Ceftazidime',
+    'Aztreonam', 
+    'Ticarcillin', 
+    'Tetracycline', 
+    'Imipenem',
+    'Gentamicin', 
+    'Amikacin'
+    ]
+
+			
+				

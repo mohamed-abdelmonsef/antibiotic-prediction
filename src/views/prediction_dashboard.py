@@ -7,7 +7,7 @@ import os
 sys.path.append(os.path.dirname(__file__))
 
 from request_preprocessing import change_types
-from default_cultures import culture_437706157, culture_681936151, culture_7806863881
+from default_cultures import culture_437706157, culture_681936151, culture_7806863881, culture_339537616
 
 st.set_page_config(page_title="Antibiotic Predictor (Input Only)", layout="centered")
 
@@ -16,7 +16,8 @@ default_profiles = {
     "Custom": {},
     "Profile 437706157": culture_437706157,
     "Profile 681936151": culture_681936151,
-    "Profile 7806863881": culture_7806863881
+    "Profile 7806863881": culture_7806863881,
+    "Profile 339537616": culture_339537616
 }
 
 selected_profile_name = st.sidebar.selectbox(
@@ -46,7 +47,7 @@ median_hco3 = st.number_input("Bicarbonate (HCO3)", value=profile.get("median_hc
 median_bun = st.number_input("BUN", value=profile.get("median_bun", 15.0))
 median_cr = st.number_input("Creatinine", value=profile.get("median_cr", 1.0))
 
-st.header("📊 Encoded Inputs")
+st.header("📊 Demographics Inputs")
 culture_description = st.selectbox(
     "Culture Description",
     ['URINE', 'BLOOD', 'RESPIRATORY'],
@@ -97,8 +98,24 @@ if st.button("Submit"):
         
         if response.status_code == 200:
             result = response.json()
-            st.success("Prediction received!")
-            st.json(result)  # Display the JSON response in Streamlit
+            # Success message
+            st.success("Prediction received successfully!")
+
+            # Show header
+            st.subheader("Top 5 Antibiotic Recommendations")
+            
+            # Convert to DataFrame for clean table display
+            df = pd.DataFrame(result["top_5_recommendations"])
+
+            # Format probabilities to 2 decimal places (optional)
+            df["probability"] = df["probability"].apply(lambda x: round(x * 100, 2))
+
+            # Rename columns for better readability
+            df.columns = ["Antibiotic", "Probability (%)"]
+
+            # Show table
+            st.table(df)
+            
         else:
             st.error(f"Request failed with status code {response.status_code}")
             st.text(response.text)  # Show error details

@@ -19,12 +19,15 @@ def change_types(data_dict):
     45-54 
     18-24 
     85-89 
+    65-74
     ABOVE 90
     """
     if data_dict['age'] >= 55 and data_dict['age'] <= 64:
         data_dict['age'] = '55-64'
     elif data_dict['age'] >= 75 and data_dict['age'] <= 84:
         data_dict['age'] = '75-84'
+    elif data_dict['age'] >= 65 and data_dict['age'] <= 74:
+        data_dict['age'] = '65-74'
     elif data_dict['age'] >= 25 and data_dict['age'] <= 34:
         data_dict['age'] = '25-34'
     elif data_dict['age'] >= 35 and data_dict['age'] <= 44:

@@ -7,16 +7,12 @@ dashpage = st.Page(
     icon=":material/bar_chart:",
     default=True,
 )
-chatpage = st.Page(
-    "views/chatbot.py",
-    title="AI CHAT BOT",
-    icon=":material/smart_toy:",
-)
+
 
 # Navigation setup
 pg = st.navigation(
     {
-        "Toolbar": [dashpage, chatpage],
+        "Toolbar": [dashpage],
     }
 )
 
