@@ -17,7 +17,7 @@ pg = st.navigation(
 )
 
 # Set logo (ensure assets/midhun.png exists)
-st.logo("assets/midhun.png")
+st.logo("assets/iti_logo.jpeg")
 
 # Run navigation
 pg.run()
