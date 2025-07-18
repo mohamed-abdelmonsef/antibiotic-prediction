@@ -1,4 +1,13 @@
-streamlit==1.38.0
-pandas==2.2.2
-plotly==5.22.0
-fpdf==1.7.2
+plotly
+fpdf
+fastapi
+uvicorn
+pandas
+numpy
+scikit-learn
+lightgbm
+joblib
+streamlit
+pydantic
+requests
+
