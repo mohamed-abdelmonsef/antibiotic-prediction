@@ -5,9 +5,9 @@ def change_types(data_dict):
 
     #first change gender to zero or one
     if data_dict['gender'] == 'male':
-        data_dict['gender'] = 1
+        data_dict['gender'] = 'M'
     else:
-        data_dict['gender'] = 0
+        data_dict['gender'] = 'F'
 
     
     # change age to range in 65-74 years    130764
@@ -19,7 +19,7 @@ def change_types(data_dict):
     45-54 
     18-24 
     85-89 
-    above 90
+    ABOVE 90
     """
     if data_dict['age'] >= 55 and data_dict['age'] <= 64:
         data_dict['age'] = '55-64'
@@ -36,4 +36,4 @@ def change_types(data_dict):
     elif data_dict['age'] >= 85 and data_dict['age'] <= 89:
         data_dict['age'] = '85-89'
     elif data_dict['age'] >= 90:
-        data_dict['age'] = 'above 90'
+        data_dict['age'] = 'ABOVE 90'
